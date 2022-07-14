@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+
+    <script src="script.js"></script>
+    <title>Report</title>
+</head>
+<body class="_body">
+    <div class="main-div">
+        <div class="buttons_container">
+            <div class="input-group mb-3">
+                <input type="text" class="_form-control" placeholder="&nbsp;Nome" aria-label="name_search_btn" id="name-formcontrol">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button" id="name_search_btn" onclick="search_on_table('name_search_btn')">Button</button>
+                </div>
+                
+                <div class="vertical_sep"></div>
+                <input type="text" class="_form-control" placeholder="&nbsp;E-Mail" aria-label="email_search_btn" id="email-formcontrol">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="email_search_btn" onclick="search_on_table('email_search_btn')">Button</button>
+                  </div>
+    
+                <div class="vertical_sep"></div>
+                  <input type="text" class="_form-control" placeholder="&nbsp;SKU" aria-label="sku_search_btn" id="sku-formcontrol">
+                  <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" id="sku_search_btn" onclick="search_on_table('sku_search_btn')">Button</button>
+                    </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="table-responsive" id="sales-list">
+        <h2>
+            <span><i class="bi bi-person-lines-fill"></i>&nbsp;Lista de Clientes &nbsp;<a href="" class="bi bi-arrow-clockwise" onclick="showCell()"></a></span>
+        </h2>
+        <table class="table table-sm table-striped">
+            <thead class="thead-dark">
+             <tr><th>#</th><th>Nome</th><th>Email</th><th>Tipo</th><th>Data</th><th>Produto</th><th>SKU</th></tr></thead>
+             <tbody>
+             <tr><td>1</td><td>Helena</td><td>helena@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>2</td><td>Alice</td><td>alice@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>3</td><td>Laura</td><td>laura@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>4</td><td>Manuela</td><td>manuela@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>5</td><td>Isabella</td><td>isabella@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>6</td><td>Sophia</td><td>sophia@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>7</td><td>Luísa</td><td>luísa@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>8</td><td>Heloísa</td><td>heloísa@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>9</td><td>Liz</td><td>liz@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>10</td><td>Cecília</td><td>cecília@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>11</td><td>Eloá</td><td>eloá@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>12</td><td>Júlia</td><td>júlia@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>13</td><td>Valentina</td><td>valentina@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>14</td><td>Lívia</td><td>lívia@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>15</td><td>Maitê</td><td>maitê@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>16</td><td>Maria Luísa</td><td>maria_luísa@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>17</td><td>Antonella</td><td>antonella@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>18</td><td>Lorena</td><td>lorena@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>19</td><td>Giovanna</td><td>giovanna@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>20</td><td>Elisa</td><td>elisa@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>21</td><td>Maria Júlia</td><td>maria_júlia@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>22</td><td>Lara</td><td>lara@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>23</td><td>Maria Clara</td><td>maria_clara@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>24</td><td>Mariana</td><td>mariana@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>25</td><td>Beatriz</td><td>beatriz@provedor.com.br</td><td>Novo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>26</td><td>Ísis</td><td>ísis@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>27</td><td>Ayla</td><td>ayla@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>28</td><td>Sarah</td><td>sarah@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>29</td><td>Maria Eduarda</td><td>maria_eduarda@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>30</td><td>Aurora</td><td>aurora@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>31</td><td>Esther</td><td>esther@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>32</td><td>Isadora</td><td>isadora@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>33</td><td>Catarina</td><td>catarina@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>34</td><td>Emanuelly</td><td>emanuelly@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>35</td><td>Melissa</td><td>melissa@provedor.com.br</td><td>Novo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>36</td><td>Alícia</td><td>alícia@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>37</td><td>Maria Cecília</td><td>maria_cecília@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>38</td><td>Lavínia</td><td>lavínia@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>39</td><td>Maria Alice</td><td>maria_alice@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>40</td><td>Marina</td><td>marina@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>41</td><td>Maria</td><td>maria@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>42</td><td>Luna</td><td>luna@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>43</td><td>Ana Clara</td><td>ana_clara@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>44</td><td>Rebeca</td><td>rebeca@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>45</td><td>Yasmin</td><td>yasmin@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>46</td><td>Agatha</td><td>agatha@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>47</td><td>Clara</td><td>clara@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>48</td><td>Ana Luísa</td><td>ana_luísa@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>49</td><td>Maria Helena</td><td>maria_helena@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>50</td><td>Rafaela</td><td>rafaela@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>51</td><td>Ana Júlia</td><td>ana_júlia@provedor.com.br</td><td>Novo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>52</td><td>Olívia</td><td>olívia@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>53</td><td>Ana Laura</td><td>ana_laura@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>54</td><td>Gabriela</td><td>gabriela@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>55</td><td>Maya</td><td>maya@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>56</td><td>Isabelly</td><td>isabelly@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>57</td><td>Ana Liz</td><td>ana_liz@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>58</td><td>Stella</td><td>stella@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>59</td><td>Alana</td><td>alana@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>60</td><td>Letícia</td><td>letícia@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>61</td><td>Vitória</td><td>vitória@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>62</td><td>Bella</td><td>bella@provedor.com.br</td><td>Novo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>63</td><td>Mirella</td><td>mirella@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>64</td><td>Milena</td><td>milena@provedor.com.br</td><td>Novo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>65</td><td>Nicole</td><td>nicole@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>66</td><td>Clarice</td><td>clarice@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>67</td><td>Emilly</td><td>emilly@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>68</td><td>Ana</td><td>ana@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>69</td><td>Mariah</td><td>mariah@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>70</td><td>Maria Fernanda</td><td>maria_fernanda@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>71</td><td>Melina</td><td>melina@provedor.com.br</td><td>Novo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>72</td><td>Bianca</td><td>bianca@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>73</td><td>Laís</td><td>laís@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>74</td><td>Maria Liz</td><td>maria_liz@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>75</td><td>Ana Beatriz</td><td>ana_beatriz@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>76</td><td>Maria Vitória</td><td>maria_vitória@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>77</td><td>Maria Laura</td><td>maria_laura@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>78</td><td>Malu</td><td>malu@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>79</td><td>Maria Valentina</td><td>maria_valentina@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>80</td><td>Betina</td><td>betina@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>81</td><td>Maria Flor</td><td>maria_flor@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>82</td><td>Pietra</td><td>pietra@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>83</td><td>Larissa</td><td>larissa@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>84</td><td>Maria Heloísa</td><td>maria_heloísa@provedor.com.br</td><td>Novo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>85</td><td>Carolina</td><td>carolina@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>86</td><td>Eduarda</td><td>eduarda@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>87</td><td>Louise</td><td>louise@provedor.com.br</td><td>Novo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>88</td><td>Elis</td><td>elis@provedor.com.br</td><td>Antigo</td><td>21/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>89</td><td>Joana</td><td>joana@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>90</td><td>Ana Lívia</td><td>ana_lívia@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>91</td><td>Ana Vitória</td><td>ana_vitória@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>92</td><td>Ana Cecília</td><td>ana_cecília@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>93</td><td>Pérola</td><td>pérola@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>94</td><td>Melinda</td><td>melinda@provedor.com.br</td><td>Antigo</td><td>24/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>95</td><td>Heloise</td><td>heloise@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>96</td><td>Hadassanovo</td><td>hadassanovo@provedor.com.br</td><td>Antigo</td><td>22/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>97</td><td>Analu</td><td>analu@provedor.com.br</td><td>Novo</td><td>21/07/2022</td><td>Water Bottle X2000</td><td>9870001212145</td></tr>
+             <tr><td>98</td><td>Jadenovo</td><td>jadenovo@provedor.com.br</td><td>Antigo</td><td>20/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>99</td><td>Gabrielly</td><td>gabrielly@provedor.com.br</td><td>Antigo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+             <tr><td>100</td><td>Fernanda</td><td>fernanda@provedor.com.br</td><td>Novo</td><td>23/07/2022</td><td>Ass Blaster XXG</td><td>9874456636685</td></tr>
+            </tbody></table>
+
+      </div>
+</body>
+</html>
